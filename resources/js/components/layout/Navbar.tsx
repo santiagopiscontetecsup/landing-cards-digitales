@@ -9,10 +9,10 @@ const Navbar: React.FC = () => {
         <Link
           key={idx}
           href={item.href}
-          className="group relative text-base font-semibold text-white transition-colors hover:text-yellow-400"
+          className="group relative text-base font-semibold text-gray-900 transition-all duration-300 hover:text-blue-600"
         >
           {item.name}
-          <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-yellow-400 transition-all group-hover:w-full"></span>
+          <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
         </Link>
       ))}
     </nav>
