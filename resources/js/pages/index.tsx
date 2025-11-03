@@ -4,6 +4,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Home from '@/components/landing/Home';
 import Pricing from '@/components/landing/Pricing';
+import About from '@/components/landing/About';
 import { type SharedData } from '@/types';
 
 interface WelcomeProps {
@@ -24,19 +25,13 @@ export default function Welcome({ canRegister = true }: WelcomeProps) {
     switch (currentView) {
       case 'pricing':
         return <Pricing />;
+      case 'about':
+        return <About />;
       case 'features':
         // Scroll to features section in home
         setCurrentView('home');
         setTimeout(() => {
           document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-        return <Home canRegister={canRegister} />;
-      case 'about':
-        // Scroll to about section in home  
-        setCurrentView('home');
-        setTimeout(() => {
-          const aboutElement = document.querySelector('[data-section="about"]');
-          aboutElement?.scrollIntoView({ behavior: 'smooth' });
         }, 100);
         return <Home canRegister={canRegister} />;
       case 'contact':
