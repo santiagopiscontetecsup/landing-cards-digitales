@@ -1,0 +1,85 @@
+export const pricingData = {
+  title: 'Planes y Precios',
+  description: 'Elige el plan perfecto para tu negocio. Sin compromisos a largo plazo, cancela cuando quieras.',
+  plans: [
+    {
+      name: 'Básico',
+      subtitle: 'Perfecto para comenzar',
+      price: 19,
+      period: '/mes',
+      featured: false,
+      buttonText: 'Comenzar Gratis',
+      features: [
+        'Hasta 50 productos',
+        '1 Menú digital',
+        'Actualizaciones ilimitadas',
+        'Código QR personalizado',
+        'Soporte por email',
+        'SSL incluido',
+      ],
+    },
+    {
+      name: 'Pro',
+      subtitle: 'El más popular',
+      price: 49,
+      period: '/mes',
+      featured: true,
+      badge: 'Más Popular',
+      buttonText: 'Comenzar Prueba',
+      features: [
+        'Productos ilimitados',
+        '5 Menús digitales',
+        'Análisis avanzados',
+        'Soporte prioritario',
+        'Personalización completa',
+        'Integración con redes sociales',
+        'Múltiples idiomas',
+        'Backup automático',
+      ],
+    },
+    {
+      name: 'Enterprise',
+      subtitle: 'Para grandes negocios',
+      price: 'Personalizado',
+      period: '',
+      featured: false,
+      buttonText: 'Contactar Ventas',
+      features: [
+        'Todo de Pro incluido',
+        'Menús ilimitados',
+        'API personalizada',
+        'Soporte 24/7',
+        'Manager dedicado',
+        'Integración con POS',
+        'White label disponible',
+        'SLA garantizado',
+      ],
+    },
+  ],
+  faq: [
+    {
+      question: '¿Puedo cambiar de plan en cualquier momento?',
+      answer: 'Sí, puedes actualizar o reducir tu plan en cualquier momento desde tu panel de control. Los cambios se aplican inmediatamente.',
+    },
+    {
+      question: '¿Hay algún costo de configuración?',
+      answer: 'No, no cobramos ningún costo de configuración. Solo pagas la suscripción mensual del plan que elijas.',
+    },
+    {
+      question: '¿Ofrecen descuentos por pago anual?',
+      answer: 'Sí, ofrecemos un 20% de descuento si pagas anualmente. Contáctanos para más detalles sobre esta oferta.',
+    },
+    {
+      question: '¿Qué métodos de pago aceptan?',
+      answer: 'Aceptamos todas las tarjetas de crédito principales, PayPal y transferencias bancarias para planes Enterprise.',
+    },
+    {
+      question: '¿Puedo cancelar mi suscripción?',
+      answer: 'Puedes cancelar tu suscripción en cualquier momento sin penalizaciones. Tu menú seguirá activo hasta el final del período facturado.',
+    },
+    {
+      question: '¿Ofrecen soporte técnico?',
+      answer: 'Sí, todos los planes incluyen soporte técnico. Los planes Pro y Enterprise tienen soporte prioritario y 24/7 respectivamente.',
+    },
+  ],
+};
