@@ -133,4 +133,4 @@ Y asegúrate de servir los archivos compilados desde Laravel.
 
 ---
 
-> Desarrollado con PisconteDev.
+> Desarrollado por PisconteDev.
