@@ -1,4 +1,4 @@
-# 🍽️ Menús Digitales
+# Menús Digitales Landing Page
 
 **Menús Digitales** es una landing page dinámica desarrollada con **Laravel + Inertia.js + React (TypeScript)**, utilizando **TailwindCSS** y **Shadcn/UI** para lograr una interfaz limpia, minimalista y completamente responsive.
 
