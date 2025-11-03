@@ -22,7 +22,6 @@ export default function Header({ onNavigate, currentView = 'home' }: HeaderProps
   return (
     <header className="w-full bg-white border-b border-gray-200 shadow-sm py-3 sticky top-0 z-50 backdrop-blur-sm bg-white/95">
       <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
         <a
           href="/"
           onClick={handleLogoClick}
@@ -45,15 +44,12 @@ export default function Header({ onNavigate, currentView = 'home' }: HeaderProps
           </div>
         </a>
 
-        {/* Desktop Navigation - Centrado */}
         <div className="flex-1 flex justify-center">
           <Navbar onNavigate={onNavigate} currentView={currentView} />
         </div>
 
-        {/* Spacer para mantener balance visual */}
         <div className="hidden lg:block w-[200px]"></div>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="lg:hidden text-gray-700 p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200"

@@ -29,14 +29,12 @@ export default function Footer({ onNavigate }: FooterProps) {
   const handleLogoClick = (e: React.MouseEvent) => {
     e.preventDefault();
     onNavigate?.('home');
-    // Scroll to top when going to home
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleNavClick = (e: React.MouseEvent, component: string) => {
     e.preventDefault();
     onNavigate?.(component);
-    // Scroll to top for better UX
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }, 100);
@@ -46,7 +44,6 @@ export default function Footer({ onNavigate }: FooterProps) {
     <footer className="w-full bg-white border-t border-gray-200 py-12 mt-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Brand Section */}
           <div className="flex flex-col space-y-4">
             <button 
               onClick={handleLogoClick}
@@ -73,7 +70,6 @@ export default function Footer({ onNavigate }: FooterProps) {
             </p>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="text-lg font-bold mb-4 text-gray-900">Enlaces Rápidos</h3>
             <nav className="flex flex-col space-y-2">
@@ -89,7 +85,6 @@ export default function Footer({ onNavigate }: FooterProps) {
             </nav>
           </div>
 
-          {/* Contact */}
           <div>
             <h3 className="text-lg font-bold mb-4 text-gray-900">Contacto</h3>
             <div className="flex flex-col space-y-3 text-sm">
@@ -115,7 +110,6 @@ export default function Footer({ onNavigate }: FooterProps) {
           </div>
         </div>
 
-        {/* Social & Copyright */}
         <div className="border-t border-gray-200 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <span className="text-sm text-gray-600 text-center md:text-left">
             {footerData.copyright.company} © {footerData.copyright.year} - Todos los derechos reservados

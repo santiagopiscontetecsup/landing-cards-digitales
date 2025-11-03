@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Head, usePage } from '@inertiajs/react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import Home from '@/components/landing/Home';
-import Pricing from '@/components/landing/Pricing';
-import About from '@/components/landing/About';
+import Home from '@/pages/landing/Home';
+import Pricing from '@/pages/landing/Pricing';
+import About from '@/pages/landing/About';
+import Contact from '@/pages/landing/Contact';
 import { type SharedData } from '@/types';
 
 interface WelcomeProps {
@@ -17,7 +18,6 @@ export default function Welcome({ canRegister = true }: WelcomeProps) {
 
   const handleNavigation = (component: string) => {
     setCurrentView(component);
-    // Scroll to top when changing views
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -27,19 +27,12 @@ export default function Welcome({ canRegister = true }: WelcomeProps) {
         return <Pricing />;
       case 'about':
         return <About />;
+      case 'contact':
+        return <Contact />;
       case 'features':
-        // Scroll to features section in home
         setCurrentView('home');
         setTimeout(() => {
           document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-        return <Home canRegister={canRegister} />;
-      case 'contact':
-        // Scroll to contact section in home
-        setCurrentView('home');
-        setTimeout(() => {
-          const contactElement = document.querySelector('[data-section="contact"]');
-          contactElement?.scrollIntoView({ behavior: 'smooth' });
         }, 100);
         return <Home canRegister={canRegister} />;
       default:
@@ -47,9 +40,22 @@ export default function Welcome({ canRegister = true }: WelcomeProps) {
     }
   };
 
+  const getTitleByView = () => {
+    switch (currentView) {
+      case 'pricing':
+        return 'Precios';
+      case 'about':
+        return 'Nosotros';
+      case 'contact':
+        return 'Contacto';
+      default:
+        return 'Inicio';
+    }
+  };
+
   return (
     <>
-      <Head title="Inicio - Menús Digitales">
+      <Head title={getTitleByView()}>
         <link rel="preconnect" href="https://fonts.bunny.net" />
         <link
           href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600"

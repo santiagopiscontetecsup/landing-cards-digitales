@@ -42,7 +42,6 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Planes de precios */}
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -127,7 +126,6 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Sección de preguntas frecuentes */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-on-scroll fade-in-up">
@@ -158,7 +156,6 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Call to Action */}
       <section className="py-20 bg-[#406D96]">
         <div className="container mx-auto px-4 text-center animate-on-scroll fade-in-up">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6 select-none">
