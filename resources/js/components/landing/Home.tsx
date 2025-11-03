@@ -3,19 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { homeData } from '@/data/home';
-import {
-  Smartphone,
-  Zap,
-  Palette,
-  Search,
-  BarChart2,
-  Languages,
-  UtensilsCrossed,
-  CheckCircle2,
-  Shield,
-  CreditCard,
-  ArrowUp,
-} from 'lucide-react';
+import { Smartphone, Zap, Palette, Search, BarChart2, Languages, UtensilsCrossed, CheckCircle2, Shield, CreditCard, ArrowUp } from 'lucide-react';
 
 const iconMap: Record<string, React.ElementType> = {
   Smartphone,
@@ -76,12 +64,9 @@ export default function Home({ canRegister = true }: HomeProps) {
 
   return (
     <div className="w-full bg-white relative">
-      {/* HERO SECTION */}
       <section className="container mx-auto px-4 py-16 md:py-24 bg-white">
         <div className="flex flex-col lg:flex-row items-center gap-16">
-          {/* Texto y botones - IZQUIERDA */}
           <div className="w-full lg:w-1/2 flex flex-col items-start space-y-6 animate-on-scroll fade-in-left">
-            {/* Benefits Grid */}
             <div className="flex flex-wrap gap-3 mb-2">
               {homeData.hero.benefits.map((benefit, idx) => {
                 const BenefitIcon = iconMap[benefit.icon] || CheckCircle2;
@@ -136,10 +121,8 @@ export default function Home({ canRegister = true }: HomeProps) {
             </div>
           </div>
 
-          {/* Imagen principal - DERECHA */}
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end animate-on-scroll fade-in-right">
             <div className="relative w-full max-w-[550px]">
-              {/* Imagen completamente limpia */}
               <div className="relative">
                 <img
                   src="/landing/hero-image-talent.600f3403.jpg"
@@ -154,7 +137,6 @@ export default function Home({ canRegister = true }: HomeProps) {
         </div>
       </section>
 
-      {/* QUÉ ES DAILYMENU */}
       <section className="py-20 md:py-28 bg-gray-50" data-section="about">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-on-scroll fade-in-up">
@@ -173,7 +155,6 @@ export default function Home({ canRegister = true }: HomeProps) {
                 <div key={idx} className="animate-on-scroll fade-in-up" style={{ animationDelay: `${idx * 100}ms` }}>
                   <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 hover:scale-105 h-full bg-white group cursor-pointer overflow-hidden">
                     <CardHeader className="relative">
-                      {/* Decoración de fondo para el hover */}
                       <div className="absolute inset-0 bg-gradient-to-br from-[#406D96]/5 to-[#406D96]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       
                       <div className="relative z-10 w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[#406D96]/10 to-[#406D96]/20 border-2 border-[#406D96]/20 rounded-3xl flex items-center justify-center group-hover:bg-[#406D96] group-hover:border-[#406D96] group-hover:scale-110 transition-all duration-500">
@@ -189,7 +170,6 @@ export default function Home({ canRegister = true }: HomeProps) {
                       </p>
                     </CardContent>
                     
-                    {/* Elemento decorativo en la esquina */}
                     <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#406D96]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </Card>
                 </div>
@@ -199,7 +179,6 @@ export default function Home({ canRegister = true }: HomeProps) {
         </div>
       </section>
 
-      {/* CÓMO FUNCIONA */}
       <section className="py-20 md:py-28 bg-[#406D96] text-white relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16 animate-on-scroll fade-in-up">
@@ -226,7 +205,6 @@ export default function Home({ canRegister = true }: HomeProps) {
         </div>
       </section>
 
-      {/* CARACTERÍSTICAS */}
       <section id="features" className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-on-scroll fade-in-up">
@@ -263,7 +241,6 @@ export default function Home({ canRegister = true }: HomeProps) {
       </section>
 
 
-      {/* CALL TO ACTION */}
       <section className="py-20 md:py-28 bg-[#406D96] relative overflow-hidden" data-section="contact">
         <div className="container mx-auto px-4 text-center relative z-10 animate-on-scroll fade-in-up">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-8 select-none">
@@ -286,7 +263,6 @@ export default function Home({ canRegister = true }: HomeProps) {
         </div>
       </section>
 
-      {/* Scroll to Top Button */}
       {showScrollTop && (
         <Button
           onClick={scrollToTop}
