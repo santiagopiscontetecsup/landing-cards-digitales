@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from '@inertiajs/react';
 import { navigationItems } from '@/data/navbar';
 import { footerData } from '@/data/footer';
 import {
@@ -9,25 +8,50 @@ import {
   Mail,
   Phone,
   MapPin,
+  Linkedin,
 } from 'lucide-react';
 
 const iconMap: Record<string, React.ElementType> = {
   Facebook,
   Instagram,
   Twitter,
+  Linkedin,
   Mail,
   Phone,
   MapPin,
 };
 
-export default function Footer() {
+interface FooterProps {
+  onNavigate?: (component: string) => void;
+}
+
+export default function Footer({ onNavigate }: FooterProps) {
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    onNavigate?.('home');
+    // Scroll to top when going to home
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavClick = (e: React.MouseEvent, component: string) => {
+    e.preventDefault();
+    onNavigate?.(component);
+    // Scroll to top for better UX
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
+
   return (
     <footer className="w-full bg-white border-t border-gray-200 py-12 mt-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand Section */}
           <div className="flex flex-col space-y-4">
-            <Link href="/" className="flex items-center space-x-3 group">
+            <button 
+              onClick={handleLogoClick}
+              className="flex items-center space-x-3 group cursor-pointer text-left"
+            >
               <div className="relative w-10 h-10 overflow-hidden group-hover:opacity-80 transition-opacity duration-300">
                 <img
                   src={footerData.brand.logo}
@@ -36,14 +60,14 @@ export default function Footer() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                <span className="text-xl font-bold text-gray-900 group-hover:text-[#406D96] transition-colors duration-300">
                   {footerData.brand.name}
                 </span>
                 <span className="text-xs text-gray-500 font-medium -mt-0.5">
                   {footerData.brand.tagline}
                 </span>
               </div>
-            </Link>
+            </button>
             <p className="text-gray-600 text-sm leading-relaxed">
               {footerData.brand.description}
             </p>
@@ -54,13 +78,13 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4 text-gray-900">Enlaces Rápidos</h3>
             <nav className="flex flex-col space-y-2">
               {navigationItems.map((item, idx) => (
-                <Link
+                <button
                   key={idx}
-                  href={item.href}
-                  className="text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all duration-300 text-sm font-medium"
+                  onClick={(e) => handleNavClick(e, item.component || 'home')}
+                  className="text-gray-600 hover:text-[#406D96] hover:translate-x-1 transition-all duration-300 text-sm font-medium text-left"
                 >
                   {item.name}
-                </Link>
+                </button>
               ))}
             </nav>
           </div>
@@ -71,14 +95,14 @@ export default function Footer() {
             <div className="flex flex-col space-y-3 text-sm">
               <a
                 href={`mailto:${footerData.contact.email}`}
-                className="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center space-x-2 group"
+                className="text-gray-600 hover:text-[#406D96] transition-colors duration-300 flex items-center space-x-2 group"
               >
                 <Mail className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                 <span>{footerData.contact.email}</span>
               </a>
               <a
                 href={`tel:${footerData.contact.phone.replace(/\s/g, '')}`}
-                className="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center space-x-2 group"
+                className="text-gray-600 hover:text-[#406D96] transition-colors duration-300 flex items-center space-x-2 group"
               >
                 <Phone className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                 <span>{footerData.contact.phone}</span>
